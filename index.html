@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sridhar Iyer | Supply Chain Management Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2332;
+            --accent: #0066cc;
+            --accent-light: #e8f2ff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --gradient: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            text-align: center;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255,255,255,0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 10px 30px rgba(0,102,204,0.1);
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .skill-card li {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .skill-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-org {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .project-challenge {
+            background: var(--accent-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .project-challenge h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-challenge p {
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .project-description {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-description h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-description ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .project-description li {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .project-gallery {
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        .project-gallery h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .gallery-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+        }
+
+        .gallery-caption h5 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .gallery-caption p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Publications */
+        .publication-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+        }
+
+        .publication-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .publication-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .publication-meta {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-status {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .publication-status.accepted {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* Experience */
+        .experience-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-company {
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .experience-description ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .experience-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* References */
+        .reference-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f2ff 100%);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .reference-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .reference-title {
+            font-size: 1.05rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .reference-org {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .reference-quote {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            font-style: italic;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .reference-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .highlight-item strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .degree {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .university {
+            font-size: 1.05rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .graduation-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image img {
+                width: 240px;
+                height: 240px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-links {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section > * {
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        section > *:nth-child(1) { animation-delay: 0.1s; }
+        section > *:nth-child(2) { animation-delay: 0.2s; }
+        section > *:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Sridhar Iyer</h1>
+                <p class="hero-tagline">Supply Chain Management Graduate | Data-Driven Problem Solver | AI & Analytics Enthusiast</p>
+                <p class="hero-description">
+                    Recent Master of Science graduate specializing in merging cutting-edge AI applications with practical supply chain solutions. Passionate about optimizing complex logistics operations through innovative technology and data analytics.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:iyersridhar40@gmail.com">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/sridhariyer-62bbb1218" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Competencies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Supply Chain & Operations</h3>
+                    <ul>
+                        <li>Supply Chain Optimization</li>
+                        <li>Demand Planning & Forecasting</li>
+                        <li>Supplier Selection & Procurement</li>
+                        <li>Inventory Management</li>
+                        <li>Distribution Network Design</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Data Analytics & AI</h3>
+                    <ul>
+                        <li>Python, R, SQL</li>
+                        <li>Machine Learning (KNN, Random Forest)</li>
+                        <li>Time Series Forecasting (ARIMA, SARIMA, ETS)</li>
+                        <li>Artificial General Intelligence Applications</li>
+                        <li>Predictive Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Enterprise Systems & Tools</h3>
+                    <ul>
+                        <li>SAP S/4HANA</li>
+                        <li>Microsoft Power BI</li>
+                        <li>Advanced Excel & DAX</li>
+                        <li>AnyLogic Simulation Software</li>
+                        <li>ERP Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Academic and practical applications demonstrating supply chain innovation and analytical expertise</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: AGI Framework -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">AGI-Enabled Supply Chain Framework for CO₂ Emission Reduction</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Developed a transformative Artificial General Intelligence framework addressing global CO₂ emissions in supply chain operations. This research represents a paradigm shift from traditional AI approaches by enabling autonomous learning, reasoning, and generalization across diverse supply chain scenarios.
+                            <ul>
+                                <li>Designed AGI algorithms for clustering and dynamic routing to reduce carbon footprints across supply chain nodes</li>
+                                <li>Demonstrated real-time optimization capabilities without human intervention</li>
+                                <li>Created flexible, scalable framework adaptable to various industries</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Artificial General Intelligence</span>
+                            <span class="skill-tag">Clustering</span>
+                            <span class="skill-tag">Routing Solutions</span>
+                            <span class="skill-tag">Carbon Footprint Reduction</span>
+                            <span class="skill-tag">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Power BI Dashboard -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Data-Driven Inventory & Supply Chain Performance Analysis</h3>
+                                <p class="project-org">Business Intelligence Dashboard</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Built comprehensive end-to-end BI dashboard providing real-time visibility into supply chain KPIs and cost drivers, enabling data-driven decision-making.
+                            <ul>
+                                <li>Engineered complex DAX measures for financial and operational metrics</li>
+                                <li>Tracked efficiency metrics: Inventory Turnover (23.47), Days Sales of Inventory (15.56), Warehouse Utilization (34.08%)</li>
+                                <li>Implemented interactive visualizations for transportation cost analysis and lead time optimization</li>
+                                <li>Delivered self-service analytics capabilities through dynamic slicers and filters</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Microsoft Power BI</span>
+                            <span class="skill-tag">DAX</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Data Modeling</span>
+                            <span class="skill-tag">KPI Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: ERP Design-to-Operate -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Design-to-Operate ERP Project</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-challenge">
+                            <h4>The Challenge</h4>
+                            <p>Managing a product's journey from initial design to final production is often fragmented. I implemented a comprehensive Design-to-Operate workflow in SAP S/4HANA to bridge the gap between engineering, procurement, and finance.</p>
+                        </div>
+
+                        <div class="project-description">
+                            <h4>Key Contributions</h4>
+                            <ul>
+                                <li><strong>Integrated Product Lifecycle Management:</strong> Engineered manufacturing routings and work center configurations to translate technical designs into executable shop-floor operations.</li>
+                                <li><strong>Dynamic Supply Chain Planning:</strong> Leveraged Material Requirements Planning (MRP) to analyze real-time stock levels and automate replenishment strategies, ensuring zero production downtime.</li>
+                                <li><strong>Strategic Procurement Execution:</strong> Managed the full procurement lifecycle, from vendor selection and purchase order generation to goods receipt and inventory intake.</li>
+                                <li><strong>Financial Performance Analysis:</strong> Conducted target-vs-actual cost comparisons to identify production variances, providing data-driven insights for future cost-reduction strategies.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-gallery">
+                            <h4>Visual Gallery</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="design_operate_1.png" alt="Work Center Configuration">
+                                    <div class="gallery-caption">
+                                        <h5>The Foundation</h5>
+                                        <p>Configuring manufacturing logic and labor capacities.</p>
+                                    </div>
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img src="design_operate_2.png" alt="Manufacturing Routing Operations">
+                                    <div class="gallery-caption">
+                                        <h5>The Strategy</h5>
+                                        <p>Engineering manufacturing routings and translating designs into shop-floor operations.</p>
+                                    </div>
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img src="design_operate_3.png" alt="Purchase Order Creation">
+                                    <div class="gallery-caption">
+                                        <h5>The Action</h5>
+                                        <p>Executing high-value procurement transactions and vendor management.</p>
+                                    </div>
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img src="design_operate_4.png" alt="Target vs Actual Cost Analysis">
+                                    <div class="gallery-caption">
+                                        <h5>The Result</h5>
+                                        <p>Financial oversight and production variance reporting.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-description" style="margin-top: 2rem;">
+                            <h4>Technical Toolkit</h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li><strong>System:</strong> SAP S/4HANA (Fiori)</li>
+                                <li><strong>Modules:</strong> Materials Management (MM), Production Planning (PP), Controlling (CO)</li>
+                                <li><strong>Key Processes:</strong> MRP, Procurement, Cost Analysis, Master Data Management</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-skills">
+                            <span class="skill-tag">SAP S/4HANA</span>
+                            <span class="skill-tag">BOM Management</span>
+                            <span class="skill-tag">Procurement</span>
+                            <span class="skill-tag">ERP Workflows</span>
+                            <span class="skill-tag">MRP</span>
+                            <span class="skill-tag">Production Planning</span>
+                            <span class="skill-tag">Cost Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Distribution Network Design -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Distribution Network Design & Optimization</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Conducted strategic analysis comparing centralized vs. decentralized warehouse configurations for XYZ Company, presented to CEO-level stakeholders.
+                            <ul>
+                                <li>Evaluated cost savings, inventory management impacts, and strategic implications</li>
+                                <li>Analyzed transportation efficiency, warehousing costs, and service levels</li>
+                                <li>Assessed risks including lead times and supply chain disruptions</li>
+                                <li>Provided actionable recommendations for distribution efficiency improvements</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Network Design</span>
+                            <span class="skill-tag">Cost-Benefit Analysis</span>
+                            <span class="skill-tag">Warehousing Strategy</span>
+                            <span class="skill-tag">Logistics Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: MRP Simulation -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">ERP-Based Procurement & Replenishment Simulation</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Managed comprehensive material requirements planning and procurement processes in SAP environment.
+                            <ul>
+                                <li>Maintained material master data including lead times, MOQ, and rounding values</li>
+                                <li>Executed multi-level MRP runs triggering PRs, stock transfers, and production orders</li>
+                                <li>Posted material movements and analyzed buffer sizing strategies</li>
+                                <li>Evaluated KPIs: Mean Absolute Deviation (MAD), On-Time-In-Full (OTIF), reorder levels</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">SAP S/4HANA</span>
+                            <span class="skill-tag">MRP</span>
+                            <span class="skill-tag">Demand Forecasting</span>
+                            <span class="skill-tag">Inventory Control</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Time Series Forecasting -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Forecasting Fossil Fuel Production Trends</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Applied advanced statistical modeling for long-term energy production forecasting using 75 years of historical data.
+                            <ul>
+                                <li>Developed and compared ARIMA, SARIMA, and ETS models for production forecasting</li>
+                                <li>Evaluated model performance using AIC/BIC metrics and residual autocorrelation analysis</li>
+                                <li>Processed datasets from 1949-2023 to identify deterministic trends and seasonal patterns</li>
+                                <li>Delivered high-reliability forecasts for strategic energy planning</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">R Programming</span>
+                            <span class="skill-tag">Time Series Analysis</span>
+                            <span class="skill-tag">ARIMA/SARIMA</span>
+                            <span class="skill-tag">Predictive Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Maintenance Model -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Maintenance Model Development for Transportation & Logistics</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Created simulation-based maintenance optimization system for fleet management.
+                            <ul>
+                                <li>Developed AnyLogic model to manage maintenance schedules and optimize processes</li>
+                                <li>Applied simulation techniques to predict equipment failures and schedule preventive maintenance</li>
+                                <li>Evaluated global and European transport scenarios, achieving 12% improvement in delivery efficiency</li>
+                                <li>Presented findings to faculty demonstrating strong communication and analytical capabilities</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">AnyLogic</span>
+                            <span class="skill-tag">Simulation Modeling</span>
+                            <span class="skill-tag">Fleet Management</span>
+                            <span class="skill-tag">Predictive Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Perishable Supply Chain -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Perishable Supply Chain Optimization Using Simulation</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Optimized supply chain operations for perishable goods through advanced simulation modeling.
+                            <ul>
+                                <li>Evaluated real-time challenges in demand variability and supply delays using Fresh Connection simulation</li>
+                                <li>Improved KPIs: inventory turnover, stockout rates, and delivery accuracy</li>
+                                <li>Developed optimization strategies for capacity-constrained environments</li>
+                                <li>Incorporated Incoterms, lead times, and compliance requirements into optimization models</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Demand Planning</span>
+                            <span class="skill-tag">Supply Chain Optimization</span>
+                            <span class="skill-tag">Simulation</span>
+                            <span class="skill-tag">Operational Excellence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: ML Inventory Forecasting -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Predictive Inventory Forecasting Using Machine Learning</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            Implemented machine learning algorithms to enhance inventory forecasting accuracy for e-commerce operations.
+                            <ul>
+                                <li>Built predictive models using K-Nearest Neighbors (KNN) and Random Forest algorithms</li>
+                                <li>Analyzed large e-commerce datasets to uncover demand trends and seasonality patterns</li>
+                                <li>Provided actionable insights to optimize lead times and reduce stockouts</li>
+                                <li>Enhanced fulfillment performance through data-driven stock decisions</li>
+                            </ul>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">KNN</span>
+                            <span class="skill-tag">Random Forest</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Demand Forecasting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: Source-to-Pay - UPDATED -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Source-to-Pay (S2P) Lifecycle Management & Process Optimization</h3>
+                                <p class="project-org">Constructor University</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-challenge">
+                            <h4>The Challenge</h4>
+                            <p>Strategic procurement requires a seamless flow from identifying requirements to final vendor settlement. I managed the end-to-end S2P process in SAP S/4HANA to ensure material availability while maintaining strict financial integrity and high-performance sourcing standards.</p>
+                        </div>
+
+                        <div class="project-description">
+                            <h4>Key Contributions</h4>
+                            <ul>
+                                <li><strong>Strategic Sourcing & Bidding:</strong> Facilitated the bidding process by converting internal requirements into Requests for Quotation (RFQ); managed supplier quotations and awarded contracts based on optimal value.</li>
+                                <li><strong>Requirements Processing:</strong> Leveraged automated Material Requirements Planning (MRP) to identify stock deficits and converted those needs into validated Purchase Requisitions.</li>
+                                <li><strong>Execution & Purchase Management:</strong> Managed high-value Standard Purchase Orders, ensuring all technical specifications and delivery schedules were synchronized with production needs.</li>
+                                <li><strong>Three-Way Match Verification:</strong> Oversaw the downstream logistics by verifying that Goods Receipts and Supplier Invoices matched the original Purchase Orders to ensure fiscal accuracy and inventory precision.</li>
+                                <li><strong>Spend Analysis & Cost Control:</strong> Monitored actual expenditures against planned budgets, identifying and resolving production variances to optimize procurement ROI.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-gallery">
+                            <h4>Visual Gallery</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="project_image_3.png" alt="Strategic Sourcing: RFQ Process Flow">
+                                    <div class="gallery-caption">
+                                        <h5>The Sourcing Bridge</h5>
+                                        <p>Strategic Sourcing: Managing the transition from internal Requisition to Supplier Quotation and Awarding.</p>
+                                    </div>
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img src="project_image_2.png" alt="Procurement Execution: Purchase Order Process Flow">
+                                    <div class="gallery-caption">
+                                        <h5>The Procurement Loop</h5>
+                                        <p>Procurement Execution: Visualizing the document flow from Order to Goods Receipt and Invoice.</p>
+                                    </div>
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img src="project_image_1.png" alt="The Planning Brain: Stock/Requirements Analysis">
+                                    <div class="gallery-caption">
+                                        <h5>The Planning Brain</h5>
+                                        <p>MD04 Stock/Requirements Analysis: Real-time visibility into material planning, stock levels, and procurement triggers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-skills">
+                            <span class="skill-tag">SAP S/4HANA</span>
+                            <span class="skill-tag">Source-to-Pay</span>
+                            <span class="skill-tag">Procurement</span>
+                            <span class="skill-tag">Supplier Management</span>
+                            <span class="skill-tag">RFQ Process</span>
+                            <span class="skill-tag">MRP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">Peer-reviewed research contributions advancing supply chain sustainability and AI applications</p>
+            </div>
+            
+            <div class="publication-card">
+                <h3 class="publication-title">An Artificial General Intelligence Enabled Supply Chain Framework for CO₂ Emission Reduction</h3>
+                <p class="publication-meta">
+                    <strong>Authors:</strong> Mohammad Reza Rezaei, Sridhar Iyer, Sripathy Kathiresan Tamilselvan, Omid Fatahi Valilai
+                </p>
+                <p class="publication-meta">
+                    <strong>Conference:</strong> IN4PL 2025 - 6th IFAC/INSTICC International Conference on Innovative Intelligent Industrial Production and Logistics
+                </p>
+                <p class="publication-meta">
+                    <strong>Venue:</strong> Marbella, Spain | October 23-24, 2025
+                </p>
+                <p class="publication-meta">
+                    <strong>Publisher:</strong> Springer CCIS Series | Indexed in: DBLP, Google Scholar, EI-Compendex, INSPEC, Scopus, zbMATH
+                </p>
+                <span class="publication-status accepted">Accepted as Full Paper</span>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">A Generative AI Based Intelligent Decision Support Framework for Supplier Selection</h3>
+                <p class="publication-meta">
+                    <strong>Authors:</strong> Sridhar Iyer, Omid Fatahi Valilai
+                </p>
+                <p class="publication-meta">
+                    <strong>Journal:</strong> International Journal of Knowledge-Based and Intelligent Engineering Systems
+                </p>
+                <p class="publication-meta">
+                    <strong>Year:</strong> 2025
+                </p>
+                <span class="publication-status">Under Review</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academic Reference</h2>
+            </div>
+            
+            <div class="reference-card">
+                <h3 class="reference-name">Prof. Dr. Omid Fatahi Valilai</h3>
+                <p class="reference-title">Professor of Industrial Engineering</p>
+                <p class="reference-org">Constructor University Bremen | Primary Coordinator & WP Leader, SORT4CIRC EU Project</p>
+                
+                <div class="reference-quote">
+                    "Sridhar is an intellectually gifted, diligent, and methodically organized individual, possessing exceptional analytical and research skills. Innovative thinking and strong work ethics render Sridhar an excellent candidate for both academic and professional pursuits."
+                </div>
+
+                <div class="reference-highlights">
+                    <div class="highlight-item">
+                        <strong>Academic Performance</strong>
+                        Top 1% in Research Project (Fall 2024)
+                    </div>
+                    <div class="highlight-item">
+                        <strong>Thesis Recognition</strong>
+                        Gained appreciation from review committee for research novelty
+                    </div>
+                    <div class="highlight-item">
+                        <strong>Research Contribution</strong>
+                        Published in international conferences and journals
+                    </div>
+                    <div class="highlight-item">
+                        <strong>Technical Proficiency</strong>
+                        Advanced skills in SAP S/4HANA, data analysis, and optimization
+                    </div>
+                </div>
+
+                <p style="margin-top: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                    <strong>Contact:</strong> ofatahival@Constructor.University | +49.421.200-3077
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Recruitment Consultant</h3>
+                    <p class="experience-company">Your Staffing Solutions Pvt Ltd</p>
+                    <p class="experience-date">October 2022 - May 2023 (8 months) | Gujarat, India</p>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Collaborated with hiring managers and department heads to understand staffing needs and create tailored job descriptions, improving hiring accuracy</li>
+                        <li>Supported end-to-end recruitment processes including job posting, resume screening, and candidate management, streamlining workflows for hiring managers</li>
+                        <li>Enhanced candidate experience through clear communication, timely feedback, and personalized support throughout recruitment lifecycle</li>
+                        <li>Leveraged applicant tracking systems (ATS) and recruitment technologies to maintain organized candidate databases and optimize processes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3 class="degree">Master of Science in Supply Chain Management</h3>
+                    <p class="university">Constructor University Bremen</p>
+                    <p class="graduation-date">Graduated: August 2023</p>
+                    <p style="margin-top: 1rem; color: var(--text-light);">
+                        <strong>Thesis:</strong> Development of a Conceptual Framework for Applying Generative AI Models in Supplier Selection Processes
+                    </p>
+                </div>
+                <div class="education-card">
+                    <h3 class="degree">BBA Honours in Operations Management and Supervision</h3>
+                    <p class="university">Karnavati University</p>
+                    <p class="graduation-date">2019 - 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sridhar Iyer. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Supply Chain Management Professional | Data Analytics Specialist | AI Innovation Researcher</p>
+        </div>
+    </footer>
+</body>
+</html>
